@@ -9,6 +9,7 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 
@@ -29,6 +30,7 @@ public class GatewayServiceApplication {
 
     //Dynamic
     @Bean
+
     DiscoveryClientRouteDefinitionLocator defintionLocator(ReactiveDiscoveryClient rdc, DiscoveryLocatorProperties properties){
         return new DiscoveryClientRouteDefinitionLocator(rdc,properties);
     }
